@@ -1,15 +1,15 @@
-@mainpage
+@mainfile
 # libnumerixpp
 
 <p align="center">A Powerful C++ Library for High-Performance Numerical Computing</p>
 <br>
 <p align="center">
-	<img src="https://img.shields.io/github/languages/top/alxvdev/libnumerixpp?style=for-the-badge">
-	<img src="https://img.shields.io/github/languages/count/alxvdev/libnumerixpp?style=for-the-badge">
-	<img src="https://img.shields.io/github/license/alxvdev/libnumerixpp?style=for-the-badge">
-	<img src="https://img.shields.io/github/stars/alxvdev/libnumerixpp?style=for-the-badge">
-	<img src="https://img.shields.io/github/issues/alxvdev/libnumerixpp?style=for-the-badge">
-	<img src="https://img.shields.io/github/last-commit/alxvdev/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/languages/top/alexeev-prog/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/languages/count/alexeev-prog/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/license/alexeev-prog/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/stars/alexeev-prog/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/issues/alexeev-prog/libnumerixpp?style=for-the-badge">
+	<img src="https://img.shields.io/github/last-commit/alexeev-prog/libnumerixpp?style=for-the-badge">
 </p>
 
 > [!CAUTION]
@@ -22,7 +22,7 @@ libnumerixpp is a powerful, cross-platofrm C++ library designed for high-perform
 
 You can join to our [small russian telegram blog](https://t.me/hex_warehouse).
 
- > You can view docs for libnumerixpp [here](https://alxvdev.github.io/libnumerixpp).
+ > You can view docs for libnumerixpp [here](https://alexeev-prog.github.io/libnumerixpp).
 
 ## Key Features
  - **Extensive Functionality**: libnumerixpp provides a wide range of functions coverint the core areas of mathematics, physics, and computer science, including:
@@ -47,10 +47,10 @@ Each module has its own set of header files and source files, ensuring flexibili
 ## Usage
 To use libnumerixpp in your project, follow these steps:
 
-1. Download or clone the repository from GitHub:
+1. Download or clone the repository from github:
 
 ```bash
-git clone https://github.com/alxvdev/libnumerixpp.git
+git clone https://github.com/alexeev-prog/libnumerixpp.git
 ```
 
 2. Set up the build process using build script:
@@ -59,41 +59,44 @@ git clone https://github.com/alxvdev/libnumerixpp.git
 cd libnumerixpp
 ./build.sh
 
+# if you want build shared lib
+./build.sh BUILD_SHARED_LIBS
+
 # OR
 cd libnumerixpp
 mkdir build && cd build
-cmake ..
+cmake .. # or cmake .. -DBUILD_SHARED_LIBS=ON
 make install
 ```
 
-3. Include the nessary modules in your code using [`#include`](https://github.com/alxvdev/libnumerixpp/tree/main/include) directives:
+3. Include the nessary modules in your code using [`#include`](https://github.com/alexeev-prog/libnumerixpp/tree/main/include) directives:
 
 ```cpp
 #include "libnumerixpp/core/common.hpp" // example
 ```
 
-4. Start using the library functions in your applications! You can view [examples of usage here](https://github.com/alxvdev/libnumerixpp/tree/main/examples).
+4. Start using the library functions in your applications! You can view [examples of usage here](https://github.com/alexeev-prog/libnumerixpp/tree/main/examples).
 
 ## Examples
-Below you can see examples of using libnumerixpp in your project. Also, you can view [examples dir](https://github.com/alxvdev/libnumerixpp/tree/main/examples).
+Below you can see examples of using libnumerixpp in your project. Also, you can view [examples dir](https://github.com/alexeev-prog/libnumerixpp/tree/main/examples).
 
 ### example-1 Speed, Time, Path
-Source code: [example-1.cpp](https://github.com/alxvdev/libnumerixpp/blob/main/examples/example-1.cpp)
+Source code: [example-1.cpp](https://github.com/alexeev-prog/libnumerixpp/blob/main/examples/example-1.cpp)
 
 This example shows how to calculate the *speed, path, and time* using the `physics::kinematics`.
 
 ### example-2 Math, Quadratic and math
-Source code: [example-2.cpp](https://github.com/alxvdev/libnumerixpp/blob/main/examples/example-2.cpp)
+Source code: [example-2.cpp](https://github.com/alexeev-prog/libnumerixpp/blob/main/examples/example-2.cpp)
 
 This example shows how to calculate the *quadratic equations, discriminant, squares* using the `mathematics` and `mathematics::quadratic`.
 
 ### example-3 Computer-science
-Source code: [example-3.cpp](https://github.com/alxvdev/libnumerixpp/blob/main/examples/example-3.cpp)
+Source code: [example-3.cpp](https://github.com/alexeev-prog/libnumerixpp/blob/main/examples/example-3.cpp)
 
 This example shows how to convert data using the `computerscience' module.
 
 ### example-4 Math Equations
-Source code: [example-4.cpp](https://github.com/alxvdev/libnumerixpp/blob/main/examples/example-4.cpp)
+Source code: [example-4.cpp](https://github.com/alexeev-prog/libnumerixpp/blob/main/examples/example-4.cpp)
 
 This example shows how to calculate the *equations* using the `mathematics` and `mathematics::equations`.
 
@@ -104,29 +107,48 @@ linumerixpp utilizes the following tools and libraries:
  - **Doxygen**: Documentation generation
 
 ## Documentation
-Detailed documentation, including user guides, API reference, and code examples, is available in the [docs](https://alxvdev.github.io/libnumerixpp/). Or you can see articles or additional info in [en docs dir](https://github.com/alxvdev/libnumerixpp/blob/main/docs/en/index.md) or [ru docs dir](https://github.com/alxvdev/libnumerixpp/blob/main/docs/ru/index.md).
+Detailed documentation, including user guides, API reference, and code examples, is available in the [docs](https://alexeev-prog.github.io/libnumerixpp/). Or you can see articles or additional info in [en docs dir](https://github.com/alexeev-prog/libnumerixpp/blob/main/docs/en/index.md) or [ru docs dir](https://github.com/alexeev-prog/libnumerixpp/blob/main/docs/ru/index.md).
 
-If you have any questions, suggestions, or encounter issues, please create a new [issue](https://github.com/alxvdev/libnumerixpp/issues/new) in the repository. We'll be happy to assist you and improve the library.
+If you have any questions, suggestions, or encounter issues, please create a new [issue](https://github.com/alexeev-prog/libnumerixpp/issues/new) in the repository. We'll be happy to assist you and improve the library.
 
 You can also write to me on Telegram: [@alexeev_dev](https://t.me/alexeev_dev)
 
 libnumerixpp is an Open Source project, and it only survives due to your feedback and support!
 
-Project releases are available at [this link](https://github.com/alxvdev/libnumerixpp/releases).
+Project releases are available at [this link](https://github.com/alexeev-prog/libnumerixpp/releases).
 
 ## Our Projects
 Check other our projects:
 
- + [Shegang - functional shell in C for linux](https://github.com/alxvdev/shegang).
- + [Hex64 - software for benchmarking](https://github.com/alxvdev/hex64)
- + [Pentest 154 - software for simple OSINT and search info about target](https://github.com/alxvdev/pentest154)
+ + [Shegang - functional shell in C for linux](https://github.com/alexeev-prog/shegang).
+ + [Hex64 - software for benchmarking](https://github.com/alexeev-prog/hex64)
+ + [Pentest 154 - software for simple OSINT and search info about target](https://github.com/alexeev-prog/pentest154)
 
 ## Project Architecture
 
 ```
 ├── build.sh
 ├── CHANGELOG.md
+├── cmake
+│   ├── coverage.cmake
+│   ├── dev-mode.cmake
+│   ├── docs-ci.cmake
+│   ├── docs.cmake
+│   ├── folders.cmake
+│   ├── install-config.cmake
+│   ├── install-rules.cmake
+│   ├── lint.cmake
+│   ├── lint-targets.cmake
+│   ├── prelude.cmake
+│   ├── project-is-top-level.cmake
+│   ├── spell.cmake
+│   ├── spell-targets.cmake
+│   └── variables.cmake
 ├── CMakeLists.txt
+├── CMakePresets.json
+├── CMakeUserPresets.json
+├── conanfile.py
+├── cwpLvF9U
 ├── docs
 │   ├── doxygen-styles.css
 │   ├── en
@@ -158,17 +180,20 @@ Check other our projects:
 │       ├── article.md
 │       └── index.md
 ├── Doxyfile
+├── Doxygen.cmake
 ├── examples
 │   ├── example-1.cpp
 │   ├── example-2.cpp
 │   ├── example-3.cpp
 │   └── example-4.cpp
+├── format-code.py
 ├── include
 │   └── libnumerixpp
 │       ├── computerscience
 │       │   └── core.hpp
 │       ├── core
 │       │   └── common.hpp
+│       ├── export.h
 │       ├── libnumerixpp.hpp
 │       ├── mathematics
 │       │   ├── core.hpp
@@ -180,23 +205,28 @@ Check other our projects:
 │           └── kinematics.hpp
 ├── LICENSE
 ├── README.md
-└── src
-    ├── computerscience
-    │   └── core.cpp
-    ├── core
-    │   └── common.cpp
-    ├── libnumerixpp.cpp
-    ├── mathematics
-    │   ├── core.cpp
-    │   ├── equations.cpp
-    │   ├── quadratic_equations.cpp
-    │   └── statistics.cpp
-    └── physics
-        ├── core.cpp
-        └── kinematics.cpp
+├── spacetabs.sh
+├── src
+│   ├── computerscience
+│   │   └── core.cpp
+│   ├── core
+│   │   └── common.cpp
+│   ├── libnumerixpp.cpp
+│   ├── mathematics
+│   │   ├── core.cpp
+│   │   ├── equations.cpp
+│   │   ├── quadratic_equations.cpp
+│   │   └── statistics.cpp
+│   └── physics
+│       ├── core.cpp
+│       └── kinematics.cpp
+└── test
+    ├── CMakeLists.txt
+    └── source
+        └── libnumerixpp_test.cpp
 ```
 
 ## Copyright
-libnumerixpp is released under the [Apache License 2.0](https://github.com/alxvdev/libnumerixpp/blob/main/LICENSE).
+libnumerixpp is released under the [Apache License 2.0](https://github.com/alexeev-prog/libnumerixpp/blob/main/LICENSE).
 
 Copyright © 2024 Alexeev Bronislav. All rights reversed.
