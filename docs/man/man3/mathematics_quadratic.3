@@ -1,0 +1,180 @@
+.TH "mathematics::quadratic" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mathematics::quadratic
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBcalculateDiscriminant\fP (double a, double b, double c)"
+.br
+.RI "Calculates the discriminant\&. "
+.ti -1c
+.RI "std::vector< double > \fBcalculateRootsByDiscriminant\fP (double discriminant, double a, double b)"
+.br
+.RI "Calculates the roots by discriminant\&. "
+.ti -1c
+.RI "std::vector< double > \fBgetRootsByVietaTheorem\fP (double a, double b, double c)"
+.br
+.RI "Gets the roots by vieta theorem\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+mathematics utils for quadratic equations and other
+
+.PP
+.PP
+.nf
+#include <iostream>
+#include <vector>
+#include "libnumerixpp/libnumerixpp\&.hpp"
+#include "libnumerixpp/core/common\&.hpp"
+#include "libnumerixpp/mathematics/core\&.hpp"
+#include "libnumerixpp/mathematics/quadratic_equations\&.hpp"
+
+int main() {
+    credits();
+    println("LIBNUMERIXPP");
+
+    // SQUARE AND SQR //
+
+    double num = 100\&.0;
+    double num_sq = mathematics::square_it_up(num);
+    double num_sqr = mathematics::get_square_root(num);
+    std::cout << "Square " << num << ": " << num_sq << std::endl;
+    std::cout << "Square root " << num << ": " << num_sqr << std::endl;
+
+    std::cout << std::endl;
+
+    // CALCULATE QUADRATIC EQUATION BY DISCRIMINANT //
+
+    double a = \-2;
+    double b = 5;
+    double c = 5;
+
+    double d = mathematics::quadratic::calculateDiscriminant(a, b, c);
+    std::vector<double> roots = mathematics::quadratic::calculateRootsByDiscriminant(d, a, b);
+
+    std::cout << "Quadratic Equation: a=" << a << "; b=" << b << "; c=" << c << std::endl;
+    std::cout << "D=" << d << std::endl;
+    std::cout << "Roots:" << std::endl;
+
+    for (double root : roots) {
+        std::cout << root << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    // PERCENTAGE //
+
+    double nump = mathematics::add_percent_to_number(100\&.0, 10\&.0);
+    std::cout << "100+10%: " << nump << std::endl;
+
+    std::cout << std::endl;
+ 
+    // POWER / Algorithms for fast exponentiation //
+
+    double bestPowVal = 100;
+    double pow_results[5] = {
+        mathematics::oldApproximatePower(10\&.0, 2\&.0),
+        mathematics::anotherApproximatePower(10\&.0, 2\&.0),
+        mathematics::binaryPower(10\&.0, 2),
+        mathematics::fastPowerDividing(10\&.0, 2\&.0),
+        mathematics::fastPowerFractional(10\&.0, 2\&.0)
+    };
+
+    std::cout << "0 oldApproximatePower    : base 10 exponent 2: " << pow_results[0] << std::endl;
+    std::cout << "1 anotherApproximatePower: base 10 exponent 2: " << pow_results[1] << std::endl;
+    std::cout << "2 binaryPower            : base 10 exponent 2: " << pow_results[2] << std::endl;
+    std::cout << "3 fastPowerDividing      : base 10 exponent 2: " << pow_results[3] << std::endl;
+    std::cout << "4 fastPowerFractional    : base 10 exponent 2: " << pow_results[4] << std::endl;
+
+    for (int i = 0; i < sizeof(pow_results) / sizeof(pow_results[0]); i++) {
+        double error = bestPowVal \- pow_results[i];
+
+        std::cout << "POW Algorithm #" << i << ": error=" << error << std::endl;
+    }
+
+    std::cout << std::endl;
+ 
+    // Other //
+
+    std::cout << "\-10 number module: " << mathematics::intabs(\-10) << std::endl;
+
+    return 0;
+}
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "double mathematics::quadratic::calculateDiscriminant (double a, double b, double c)"
+
+.PP
+Calculates the discriminant\&. Based on discriminant formula: $b^{2} - 4ac$
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a 
+.br
+\fIb\fP b 
+.br
+\fIc\fP c
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The discriminant\&. 
+.RE
+.PP
+
+.SS "std::vector< double > mathematics::quadratic::calculateRootsByDiscriminant (double discriminant, double a, double b)"
+
+.PP
+Calculates the roots by discriminant\&. Calculate the roots by discriminant  $\frac{-b +-
+            \sqrt{D}}{2a}$\&. D > 0 = 2 roots, D == 0 = 1 root, D < 0 = 0 roots\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIdiscriminant\fP The discriminant 
+.br
+\fIa\fP a 
+.br
+\fIb\fP b
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The roots by discriminant\&. 
+.RE
+.PP
+
+.SS "std::vector< double > mathematics::quadratic::getRootsByVietaTheorem (double a, double b, double c)"
+
+.PP
+Gets the roots by vieta theorem\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIa\fP a 
+.br
+\fIb\fP b 
+.br
+\fIc\fP c
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The roots by vieta theorem\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.

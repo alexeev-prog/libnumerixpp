@@ -1,0 +1,190 @@
+.TH "physics::kinematics" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+physics::kinematics \- Namespace of kinematics (physics)  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBcalculatePath\fP (double speed, double time)"
+.br
+.RI "Calculates the path\&. "
+.ti -1c
+.RI "double \fBcalculateSpeed\fP (double path, double time)"
+.br
+.RI "Calculates the speed\&. "
+.ti -1c
+.RI "double \fBcalculateTime\fP (double path, double speed)"
+.br
+.RI "Calculates the time\&. "
+.ti -1c
+.RI "double \fBcalculateFinalVelocity\fP (double initial_velocity, double acceleration, double time)"
+.br
+.RI "Calculates the final velocity\&. "
+.ti -1c
+.RI "double \fBcalculateFinalPosition\fP (double initial_position, double initial_velocity, double acceleration, double time)"
+.br
+.RI "Calculates the final position\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Namespace of kinematics (physics) 
+
+
+.PP
+\fBTodo\fP
+.RS 4
+Add more kinematics equations 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "double physics::kinematics::calculateFinalPosition (double initial_position, double initial_velocity, double acceleration, double time)"
+
+.PP
+Calculates the final position\&. This function is based on the kinematics equation: s = u*t + 0\&.5 * a * t^2 where:
+.IP "\(bu" 2
+s - final position (m)
+.IP "\(bu" 2
+u - start speed (m/s)
+.IP "\(bu" 2
+a - acceleration (m/s^2)
+.IP "\(bu" 2
+t - time (s)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinitial_position\fP The initial position 
+.br
+\fIinitial_velocity\fP The initial velocity 
+.br
+\fIacceleration\fP The acceleration 
+.br
+\fItime\fP The time
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The final position\&. 
+.RE
+.PP
+
+.SS "double physics::kinematics::calculateFinalVelocity (double initial_velocity, double acceleration, double time)"
+
+.PP
+Calculates the final velocity\&. This function is based on the basic kinematics equation: v = u + at where:
+.IP "\(bu" 2
+v - final velocity (m/s)
+.IP "\(bu" 2
+u - start speed (m/s)
+.IP "\(bu" 2
+a - accelaration (m/s^2)
+.IP "\(bu" 2
+t - time (s)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIinitial_velocity\fP The initial velocity 
+.br
+\fIacceleration\fP The acceleration 
+.br
+\fItime\fP The time
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The final velocity\&. 
+.RE
+.PP
+
+.SS "double physics::kinematics::calculatePath (double speed, double time)"
+
+.PP
+Calculates the path\&. This function is based on basic formule: S = v * t where:
+.IP "\(bu" 2
+S - path (m)
+.IP "\(bu" 2
+v - speed (m/s)
+.IP "\(bu" 2
+t - time (s)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIspeed\fP The speed 
+.br
+\fItime\fP The time
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The path\&. 
+.RE
+.PP
+
+.SS "double physics::kinematics::calculateSpeed (double path, double time)"
+
+.PP
+Calculates the speed\&. This function is based on basic formule: S = v * t where:
+.IP "\(bu" 2
+S - path (m)
+.IP "\(bu" 2
+v - speed (m/s)
+.IP "\(bu" 2
+t - time (s)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The path 
+.br
+\fItime\fP The time
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The speed\&. 
+.RE
+.PP
+
+.SS "double physics::kinematics::calculateTime (double path, double speed)"
+
+.PP
+Calculates the time\&. This function is based on basic formule: S = v * t where:
+.IP "\(bu" 2
+S - path (m)
+.IP "\(bu" 2
+v - speed (m/s)
+.IP "\(bu" 2
+t - time (s)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The path 
+.br
+\fIspeed\fP The speed
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The time\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.

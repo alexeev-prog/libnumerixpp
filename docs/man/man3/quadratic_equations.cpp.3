@@ -1,0 +1,56 @@
+.TH "src/mathematics/quadratic_equations.cpp" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+src/mathematics/quadratic_equations.cpp \- Math utils for quadratic\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fR#include <vector>\fP
+.br
+\fR#include 'libnumerixpp/mathematics/core\&.hpp'\fP
+.br
+
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBmathematics\fP"
+.br
+.RI "Basic mathematics utils\&. "
+.ti -1c
+.RI "namespace \fBmathematics::quadratic\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBmathematics::quadratic::calculateDiscriminant\fP (double a, double b, double c)"
+.br
+.RI "Calculates the discriminant\&. "
+.ti -1c
+.RI "std::vector< double > \fBmathematics::quadratic::calculateRootsByDiscriminant\fP (double discriminant, double a, double b)"
+.br
+.RI "Calculates the roots by discriminant\&. "
+.ti -1c
+.RI "std::vector< double > \fBmathematics::quadratic::getRootsByVietaTheorem\fP (double a, double b, double c)"
+.br
+.RI "Gets the roots by vieta theorem\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Math utils for quadratic\&. 
+
+
+.PP
+\fBAuthors\fP
+.RS 4
+alxvdev 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.

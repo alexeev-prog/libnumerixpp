@@ -1,0 +1,202 @@
+.TH "computerscience" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+computerscience \- Basic Computer science utils\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBconvertDecimalToBinary\fP (int decimal)"
+.br
+.RI "convert decimal to binary "
+.ti -1c
+.RI "int \fBconvertBinaryToDecimal\fP (std::string &binary)"
+.br
+.RI "convert binary to decimal "
+.ti -1c
+.RI "std::string \fBconvertDecimalToHexadecimal\fP (int decimal)"
+.br
+.RI "convert decimal to hexadecimal "
+.ti -1c
+.RI "int \fBconvertHexadecimalToDecimal\fP (std::string &hexadecimal)"
+.br
+.RI "convert hexadecimal to decimal "
+.ti -1c
+.RI "std::string \fBconvertBinaryToHexadecimal\fP (std::string &binary)"
+.br
+.RI "convert binary to hexadecimal "
+.ti -1c
+.RI "std::string \fBconvertHexadecimalToBinary\fP (std::string hexadecimal)"
+.br
+.RI "convert hexadecimal to binary "
+.ti -1c
+.RI "std::string \fBhumanizeBytesSize\fP (long long bytes, const std::string &suffix='B')"
+.br
+.RI "Scale bytes to its proper format\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Basic Computer science utils\&. 
+
+
+.PP
+.nf
+#include <iostream>
+#include <vector>
+#include "libnumerixpp/libnumerixpp\&.hpp"
+#include "libnumerixpp/core/common\&.hpp"
+#include "libnumerixpp/computerscience/core\&.hpp"
+
+#include <string>
+
+int main() {
+    credits();
+    println("LIBNUMERIXPP");
+
+    int decimalNumber = 777;
+    std::string binaryNumber = computerscience::convertDecimalToBinary(decimalNumber);
+    int decimalNumber2 = computerscience::convertBinaryToDecimal(binaryNumber);
+    std::string hexadecimalNumber = computerscience::convertDecimalToHexadecimal(decimalNumber);
+    int decimalNumber3 = computerscience::convertHexadecimalToDecimal(hexadecimalNumber);
+    std::string hexadecimalNumber2 = computerscience::convertBinaryToHexadecimal(binaryNumber);
+    std::string binaryNumber2 = computerscience::convertHexadecimalToBinary(hexadecimalNumber);
+    long long bytes = 1024 * 1024;
+
+    std::cout << "Convert decimal " << decimalNumber << " to binary: " << binaryNumber << std::endl;
+    std::cout << "Convert binary " << binaryNumber << " to decimal: " << decimalNumber2 << std::endl;
+    std::cout << "Convert decimal " << decimalNumber << " to hexadecimal: " << hexadecimalNumber << std::endl;
+    std::cout << "Convert hexadecimal " << hexadecimalNumber << " to decimal: " << decimalNumber3 << std::endl;
+    std::cout << "Convert binary " << binaryNumber << " to hexadecimal: " << hexadecimalNumber2 << std::endl;
+    std::cout << "Convert hexadecimal " << hexadecimalNumber << " to binary: " << binaryNumber2 << std::endl;
+    std::cout << "Convert " << bytes << ": " << computerscience::humanizeBytesSize(bytes) << std::endl;
+
+    return 0;
+}
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "int computerscience::convertBinaryToDecimal (std::string & binary)"
+
+.PP
+convert binary to decimal 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbinary\fP The binary
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+decimal integer 
+.RE
+.PP
+
+.SS "std::string computerscience::convertBinaryToHexadecimal (std::string & binary)"
+
+.PP
+convert binary to hexadecimal 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbinary\fP The binary
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+hexadecimal number string 
+.RE
+.PP
+
+.SS "std::string computerscience::convertDecimalToBinary (int decimal)"
+
+.PP
+convert decimal to binary 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdecimal\fP The decimal
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+binary number string 
+.RE
+.PP
+
+.SS "std::string computerscience::convertDecimalToHexadecimal (int decimal)"
+
+.PP
+convert decimal to hexadecimal 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdecimal\fP The decimal
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+hexadecimal number string 
+.RE
+.PP
+
+.SS "std::string computerscience::convertHexadecimalToBinary (std::string hexadecimal)"
+
+.PP
+convert hexadecimal to binary 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhexadecimal\fP The hexadecimal
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+binary number string 
+.RE
+.PP
+
+.SS "int computerscience::convertHexadecimalToDecimal (std::string & hexadecimal)"
+
+.PP
+convert hexadecimal to decimal 
+.PP
+\fBParameters\fP
+.RS 4
+\fIhexadecimal\fP The hexadecimal
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+decimal integer 
+.RE
+.PP
+
+.SS "std::string computerscience::humanizeBytesSize (long long bytes, const std::string & suffix = \fR'B'\fP)"
+
+.PP
+Scale bytes to its proper format\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbytes\fP The bytes 
+.br
+\fIsuffix\fP The suffix
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+humanized size 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.

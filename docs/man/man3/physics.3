@@ -1,0 +1,58 @@
+.TH "physics" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+physics \- Basic physics utils\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBkinematics\fP"
+.br
+.RI "Namespace of kinematics (physics) "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Basic physics utils\&. 
+
+
+.PP
+.nf
+#include <iostream>
+#include "libnumerixpp/libnumerixpp\&.hpp"
+#include "libnumerixpp/core/common\&.hpp"
+#include "libnumerixpp/physics/core\&.hpp"
+#include "libnumerixpp/physics/kinematics\&.hpp"
+
+int main() {
+    credits();
+    println("LIBNUMERIXPP");
+
+    double speed = 10\&.0;
+    double time = 5\&.0;
+
+    double path = physics::kinematics::calculatePath(speed, time);
+    speed = physics::kinematics::calculateSpeed(path, time);
+    time = physics::kinematics::calculateSpeed(path, speed);
+
+    std::cout << "Calculate: speed=" << speed << "m/s" << "; time=" << time << "s" << "; path=" << path << "m" << std::endl; 
+
+    double finalVelocity = physics::kinematics::calculateFinalVelocity(10\&.0, 10\&.0, 10\&.0);
+    std::cout << "final velocity (10\&.0, 10\&.0, 10\&.0) = " << finalVelocity << std::endl;
+
+    double finalPosition = physics::kinematics::calculateFinalPosition(10\&.0, 10\&.0, 10\&.0, 10\&.0);
+    std::cout << "final position (10\&.0, 10\&.0, 10\&.0, 10\&.0) = " << finalVelocity << std::endl;
+
+    return 0;
+}
+
+.fi
+.PP
+ 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.

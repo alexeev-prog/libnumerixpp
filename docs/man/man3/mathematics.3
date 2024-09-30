@@ -1,0 +1,315 @@
+.TH "mathematics" 3 "Version 0.1.0" "libnumerixpp" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mathematics \- Basic mathematics utils\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBquadratic\fP"
+.br
+.ti -1c
+.RI "namespace \fBstatistics\fP"
+.br
+.RI "Statistics namespace\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBoldApproximatePower\fP (double base, double exponent)"
+.br
+.RI "Algorithm for fast exponentiation ''Old' approximation'\&. "
+.ti -1c
+.RI "double \fBbinaryPower\fP (double b, unsigned long long e)"
+.br
+.RI "Algorithm: Binary exponentiation\&. "
+.ti -1c
+.RI "double \fBfastPowerDividing\fP (double base, double exponent)"
+.br
+.RI "Algorithm: 'Dividing fast power'\&. "
+.ti -1c
+.RI "double \fBanotherApproximatePower\fP (double base, double exponent)"
+.br
+.RI "Algorithm for fast exponentiation ''Another' approximation'\&. "
+.ti -1c
+.RI "double \fBfastPowerFractional\fP (double base, double exponent)"
+.br
+.RI "Algorithm: 'Fractional fast power'\&. "
+.ti -1c
+.RI "double \fBadd_percent_to_number\fP (double number, double percentage)"
+.br
+.RI "Adds a percent to number\&. "
+.ti -1c
+.RI "double \fBsquare_it_up\fP (double num)"
+.br
+.RI "Gets the number square (N^2)\&. "
+.ti -1c
+.RI "double \fBget_square_root\fP (double num)"
+.br
+.RI "Gets the square root\&. "
+.ti -1c
+.RI "int \fBintabs\fP (int x)"
+.br
+.RI "Getting the modulus of a number without a comparison operation\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Basic mathematics utils\&. 
+
+
+.PP
+.nf
+#include <iostream>
+#include <vector>
+#include "libnumerixpp/libnumerixpp\&.hpp"
+#include "libnumerixpp/core/common\&.hpp"
+#include "libnumerixpp/mathematics/core\&.hpp"
+#include "libnumerixpp/mathematics/quadratic_equations\&.hpp"
+
+int main() {
+    credits();
+    println("LIBNUMERIXPP");
+
+    // SQUARE AND SQR //
+
+    double num = 100\&.0;
+    double num_sq = mathematics::square_it_up(num);
+    double num_sqr = mathematics::get_square_root(num);
+    std::cout << "Square " << num << ": " << num_sq << std::endl;
+    std::cout << "Square root " << num << ": " << num_sqr << std::endl;
+
+    std::cout << std::endl;
+
+    // CALCULATE QUADRATIC EQUATION BY DISCRIMINANT //
+
+    double a = \-2;
+    double b = 5;
+    double c = 5;
+
+    double d = mathematics::quadratic::calculateDiscriminant(a, b, c);
+    std::vector<double> roots = mathematics::quadratic::calculateRootsByDiscriminant(d, a, b);
+
+    std::cout << "Quadratic Equation: a=" << a << "; b=" << b << "; c=" << c << std::endl;
+    std::cout << "D=" << d << std::endl;
+    std::cout << "Roots:" << std::endl;
+
+    for (double root : roots) {
+        std::cout << root << std::endl;
+    }
+
+    std::cout << std::endl;
+
+    // PERCENTAGE //
+
+    double nump = mathematics::add_percent_to_number(100\&.0, 10\&.0);
+    std::cout << "100+10%: " << nump << std::endl;
+
+    std::cout << std::endl;
+ 
+    // POWER / Algorithms for fast exponentiation //
+
+    double bestPowVal = 100;
+    double pow_results[5] = {
+        mathematics::oldApproximatePower(10\&.0, 2\&.0),
+        mathematics::anotherApproximatePower(10\&.0, 2\&.0),
+        mathematics::binaryPower(10\&.0, 2),
+        mathematics::fastPowerDividing(10\&.0, 2\&.0),
+        mathematics::fastPowerFractional(10\&.0, 2\&.0)
+    };
+
+    std::cout << "0 oldApproximatePower    : base 10 exponent 2: " << pow_results[0] << std::endl;
+    std::cout << "1 anotherApproximatePower: base 10 exponent 2: " << pow_results[1] << std::endl;
+    std::cout << "2 binaryPower            : base 10 exponent 2: " << pow_results[2] << std::endl;
+    std::cout << "3 fastPowerDividing      : base 10 exponent 2: " << pow_results[3] << std::endl;
+    std::cout << "4 fastPowerFractional    : base 10 exponent 2: " << pow_results[4] << std::endl;
+
+    for (int i = 0; i < sizeof(pow_results) / sizeof(pow_results[0]); i++) {
+        double error = bestPowVal \- pow_results[i];
+
+        std::cout << "POW Algorithm #" << i << ": error=" << error << std::endl;
+    }
+
+    std::cout << std::endl;
+ 
+    // Other //
+
+    std::cout << "\-10 number module: " << mathematics::intabs(\-10) << std::endl;
+
+    return 0;
+}
+
+.fi
+.PP
+ 
+.SH "Function Documentation"
+.PP 
+.SS "double mathematics::add_percent_to_number (double number, double percentage)"
+
+.PP
+Adds a percent to number\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInumber\fP The number 
+.br
+\fIpercentage\fP The percentage
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+number 
+.RE
+.PP
+
+.SS "double mathematics::anotherApproximatePower (double base, double exponent)"
+
+.PP
+Algorithm for fast exponentiation ''Another' approximation'\&. Speed increase: ~9 times\&. Accuracy: <1\&.5%\&. Limitations: accuracy drops rapidly as the absolute value of the degree increases and remains acceptable in the range [-10, 10] (see also 'old' approximation: \fBoldApproximatePower()\fP)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The base 
+.br
+\fIexponent\fP The exponent
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+raised value 
+.RE
+.PP
+
+.SS "double mathematics::binaryPower (double b, unsigned long long e)"
+
+.PP
+Algorithm: Binary exponentiation\&. Speed increase: ~7\&.5 times on average, the advantage remains until numbers are raised to a power of 134217728, Speed increase: ~7\&.5 times on average, the advantage remains until the numbers are raised to the power of 134217728\&. Error: none, but it is worth noting that the multiplication operation is not associative for floating point numbers, i\&.e\&. 1\&.21 * 1\&.21 is not the same as 1\&.1 * 1\&.1 * 1\&.1 * 1\&.1, however, when compared with standard functions, errors do not arise, as mentioned earlier\&. Restrictions: the degree must be an integer not less than 0
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP base 
+.br
+\fIexponent\fP exponent
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+raised value 
+.RE
+.PP
+
+.SS "double mathematics::fastPowerDividing (double base, double exponent)"
+
+.PP
+Algorithm: 'Dividing fast power'\&. Speed increase: ~3\&.5 times\&. Accuracy: ~13%\&. The code below contains checks for special input data\&. Without them, the code runs only 10% faster, but the error increases tenfold (especially when using negative powers)\&.
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The base 
+.br
+\fIexponent\fP The exponent
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+raised value 
+.RE
+.PP
+
+.SS "double mathematics::fastPowerFractional (double base, double exponent)"
+
+.PP
+Algorithm: 'Fractional fast power'\&. Speed increase: ~4\&.4 times\&. Accuracy: ~0\&.7%
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The base 
+.br
+\fIexponent\fP The exponent
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+raised value 
+.RE
+.PP
+
+.SS "double mathematics::get_square_root (double num)"
+
+.PP
+Gets the square root\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInum\fP The number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The square root\&. 
+.RE
+.PP
+
+.SS "int mathematics::intabs (int x)"
+
+.PP
+Getting the modulus of a number without a comparison operation\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+modulus of number 
+.RE
+.PP
+
+.SS "double mathematics::oldApproximatePower (double base, double exponent)"
+
+.PP
+Algorithm for fast exponentiation ''Old' approximation'\&. If accuracy is not important to you and the degrees are in the range from -1 to 1, you can use this method (see also 'another' approximation: \fBanotherApproximatePower()\fP)\&. This method is based on the algorithm used in the 2005 game Quake III Arena\&. He raised the number x to the power -0\&.5, i\&.e\&. found the value: $\frac{1}{\sqrt{x}}$
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIbase\fP The base 
+.br
+\fIexponent\fP The exponent
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+raised value 
+.RE
+.PP
+
+.SS "double mathematics::square_it_up (double num)"
+
+.PP
+Gets the number square (N^2)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fInum\fP The number
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number square\&. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libnumerixpp from the source code\&.
