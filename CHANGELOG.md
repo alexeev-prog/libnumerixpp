@@ -1,3 +1,15 @@
+commit 6519eda9c3c8e53e320070a222b11e5176525976
+Author: alexeev-dev <bro.alexeev@inbox.ru>
+Date:   Fri Oct 4 21:42:23 2024 +0700
+
+    Trigger rebuild
+
+commit 716437c1697141e3b1d5132e47cffa3be06c8bfe
+Author: alexeev-dev <bro.alexeev@inbox.ru>
+Date:   Fri Oct 4 21:37:48 2024 +0700
+
+    docs: improve docs
+
 commit 59141d383e16ba82d6000b97db7b396df568bd5d
 Author: alexeev-dev <bro.alexeev@inbox.ru>
 Date:   Fri Oct 4 21:37:13 2024 +0700
