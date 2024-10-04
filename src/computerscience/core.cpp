@@ -60,7 +60,7 @@ namespace computerscience {
 	}
 
 	auto convert_binary_to_hexadecimal(std::string &binary) -> std::string {
-		int decimal = convert_binary_to_decimal(binary);
+		int const decimal = convert_binary_to_decimal(binary);
 		std::string hexadecimal = convert_decimal_to_hexadecimal(decimal);
 
 		return hexadecimal;

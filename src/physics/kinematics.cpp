@@ -29,8 +29,9 @@ namespace physics::kinematics {
 		return acceleration;
 	}
 
-	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration, double time) -> double {
-		double speed = end_speed + acceleration * time;
+	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration,
+											   double time) -> double {
+		double const speed = end_speed + acceleration * time;
 
 		return speed;
 	}

@@ -1,7 +1,6 @@
 
 #include <catch2/catch_test_macros.hpp>
 #include <vector>
-#include <iostream>
 
 #include "libnumerixpp/computerscience/core.hpp"
 #include "libnumerixpp/mathematics/core.hpp"
@@ -16,13 +15,15 @@ TEST_CASE("Check physics module", "[physics]") {
 
 	auto path = physics::kinematics::calculate_path(speed, time);
 
-	REQUIRE(physics::kinematics::calculate_acceleration_of_rectilinear_motion(10.0, 15.0, 3) == 1.66666666666666674);
+	REQUIRE(physics::kinematics::calculate_acceleration_of_rectilinear_motion(10.0, 15.0, 3) ==
+			1.66666666666666674);
 	REQUIRE(path == 50.0);
 	REQUIRE(physics::kinematics::calculate_speed(path, time) == 10.0);
 	REQUIRE(physics::kinematics::calculate_path(speed, time) == path);
 	REQUIRE(physics::kinematics::calculate_time(path, speed) == time);
 	REQUIRE(physics::kinematics::calculate_final_velocity(10.0, 10.0, 10.0) == 110.0);
 	REQUIRE(physics::kinematics::calculate_final_position(10.0, 10.0, 10.0, 10.0) == 610.0);
+	REQUIRE(physics::kinematics::calculate_speed_of_rectilinear_motion(10.0, 5.0, 5.0) == 35.0);
 }
 
 TEST_CASE("Check mathematics-quadratic", "[mathematics-quadratic]") {

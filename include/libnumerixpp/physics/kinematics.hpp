@@ -120,17 +120,18 @@ namespace physics::kinematics {
 													  double time) -> double;
 
 	/**
-	 * @brief      Calculates the speed of rectilinear motion.
+	 * @brief	   Calculates the speed of rectilinear motion.
 	 *
 	 * To calculate speed, you can use the formula V0 + a * t, where v is speed, t is time.
 	 *
-	 * @param[in]  end_speed     The end speed
-	 * @param[in]  acceleration  The acceleration
-	 * @param[in]  time          The time
+	 * @param[in]  end_speed	 The end speed
+	 * @param[in]  acceleration	 The acceleration
+	 * @param[in]  time			 The time
 	 *
-	 * @return     The speed of rectilinear motion.
+	 * @return	   The speed of rectilinear motion.
 	 */
-	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration, double time) -> double;
+	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration,
+											   double time) -> double;
 }  // namespace physics::kinematics
 
 #endif	// LIBNUMERIXPP_PHYSICS_KINEMATICS_HPP
