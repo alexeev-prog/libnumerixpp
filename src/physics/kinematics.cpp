@@ -21,4 +21,17 @@ namespace physics::kinematics {
 								  double acceleration, double time) -> double {
 		return initial_position + initial_velocity * time + 0.5 * acceleration * time * time;
 	}
+
+	auto calculate_acceleration_of_rectilinear_motion(double start_speed, double end_speed,
+													  double time) -> double {
+		double const acceleration = (end_speed - start_speed) / time;
+
+		return acceleration;
+	}
+
+	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration, double time) -> double {
+		double speed = end_speed + acceleration * time;
+
+		return speed;
+	}
 }  // namespace physics::kinematics

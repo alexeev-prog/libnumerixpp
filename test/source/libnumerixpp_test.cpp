@@ -1,6 +1,7 @@
 
 #include <catch2/catch_test_macros.hpp>
 #include <vector>
+#include <iostream>
 
 #include "libnumerixpp/computerscience/core.hpp"
 #include "libnumerixpp/mathematics/core.hpp"
@@ -15,6 +16,7 @@ TEST_CASE("Check physics module", "[physics]") {
 
 	auto path = physics::kinematics::calculate_path(speed, time);
 
+	REQUIRE(physics::kinematics::calculate_acceleration_of_rectilinear_motion(10.0, 15.0, 3) == 1.66666666666666674);
 	REQUIRE(path == 50.0);
 	REQUIRE(physics::kinematics::calculate_speed(path, time) == 10.0);
 	REQUIRE(physics::kinematics::calculate_path(speed, time) == path);
@@ -49,7 +51,7 @@ TEST_CASE("Check computerscience", "[computerscience]") {
 	auto hexadecimal_number2 = computerscience::convert_binary_to_hexadecimal(binary_number);
 	long long const bytes = 1024 * 1024;
 
-	REQUIRE(binary_number == "001100001001");
+	REQUIRE(binary_number == "1100001001");
 	REQUIRE(decimal_number2 == 777);
 	REQUIRE(hexadecimal_number == "309");
 	REQUIRE(decimal_number3 == 777);

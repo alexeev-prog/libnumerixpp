@@ -18,7 +18,7 @@ namespace physics::kinematics {
 	/**
 	 * @brief	   Calculates the path.
 	 *
-	 * This function is based on basic formule: S = v * t
+	 * This function is based on basic formula: S = v * t
 	 * where:
 	 *	+ S - path (m)
 	 *	+ v - speed (m/s)
@@ -34,7 +34,7 @@ namespace physics::kinematics {
 	/**
 	 * @brief	   Calculates the speed.
 	 *
-	 * This function is based on basic formule: S = v * t
+	 * This function is based on basic formula: S = v * t
 	 * where:
 	 *	+ S - path (m)
 	 *	+ v - speed (m/s)
@@ -50,7 +50,7 @@ namespace physics::kinematics {
 	/**
 	 * @brief	   Calculates the time.
 	 *
-	 * This function is based on basic formule: S = v * t
+	 * This function is based on basic formula: S = v * t
 	 * where:
 	 *	+ S - path (m)
 	 *	+ v - speed (m/s)
@@ -101,6 +101,36 @@ namespace physics::kinematics {
 	 */
 	auto calculate_final_position(double initial_position, double initial_velocity,
 								  double acceleration, double time) -> double;
+
+	/**
+	 * @brief	   Calculates the acceleration of rectilinear motion.
+	 *
+	 * Equally variable motion is a motion in which, over any equal periods of time, a material
+	 * point changes its speed by the same amount. Acceleration is calculated by the formula \f$a =
+	 * \frac{V - V_{0}}{t}\f$, where v0 and v are the initial and final speed of the body, t is the
+	 * time of movement
+	 *
+	 * @param[in]  start_speed	The start speed
+	 * @param[in]  end_speed	The end speed
+	 * @param[in]  time			The time
+	 *
+	 * @return	   The acceleration of rectilinear motion.
+	 */
+	auto calculate_acceleration_of_rectilinear_motion(double start_speed, double end_speed,
+													  double time) -> double;
+
+	/**
+	 * @brief      Calculates the speed of rectilinear motion.
+	 *
+	 * To calculate speed, you can use the formula V0 + a * t, where v is speed, t is time.
+	 *
+	 * @param[in]  end_speed     The end speed
+	 * @param[in]  acceleration  The acceleration
+	 * @param[in]  time          The time
+	 *
+	 * @return     The speed of rectilinear motion.
+	 */
+	auto calculate_speed_of_rectilinear_motion(double end_speed, double acceleration, double time) -> double;
 }  // namespace physics::kinematics
 
 #endif	// LIBNUMERIXPP_PHYSICS_KINEMATICS_HPP

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Python program to format C/C++ files using clang-format 
 import os
+import sys
 import subprocess
 
 # Define color codes for output
@@ -87,6 +88,16 @@ def main():
 	# header files) and apply the clang formatting 
 	# Please note "-style" is for standard style options 
 	# and "-i" is in-place editing 
+
+	if len(sys.argv) > 1:
+		print(f"{BOLD}Format {sys.argv[1]}{NC}")
+		os.system(f'codespell -w {sys.argv[1]}')
+		os.system(f'clang-tidy --fix {sys.argv[1]}')
+		os.system(f"{CLANG_FORMAT} -i -style=file {sys.argv[1]}")
+		print(f"{GREEN}Formatting completed successfully: {sys.argv[1]}{NC}")
+		convert_file(f'{sys.argv[1]}', "4", "tabs")
+		return
+	
 	for root, dirs, files in os.walk(os.getcwd()):
 		if len(set(root.split('/')).intersection(IGNORED_DIRS)) > 0:
 			continue

@@ -20,6 +20,8 @@ You can join to our [small russian telegram blog](https://t.me/hex_warehouse).
 
  > You can view docs for libnumerixpp [here](https://alexeev-prog.github.io/libnumerixpp).
 
+ > Current version: 0.1.2
+
 ## Key Features
  - **Extensive Functionality**: libnumerixpp provides a wide range of functions coverint the core areas of mathematics, physics, and computer science, including:
   - Mathematics: linear algebra, calculus, geometry
