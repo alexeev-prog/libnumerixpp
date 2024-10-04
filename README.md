@@ -125,6 +125,7 @@ Check other our projects:
 ## Project Architecture
 
 ```
+.
 ├── build.sh
 ├── CHANGELOG.md
 ├── cmake
@@ -146,7 +147,6 @@ Check other our projects:
 ├── CMakePresets.json
 ├── CMakeUserPresets.json
 ├── conanfile.py
-├── cwpLvF9U
 ├── docs
 │   ├── doxygen-styles.css
 │   ├── en

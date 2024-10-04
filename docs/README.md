@@ -1,4 +1,4 @@
-@mainfile
+@mainpage
 # libnumerixpp
 
 <p align="center">A Powerful C++ Library for High-Performance Numerical Computing</p>
@@ -15,14 +15,13 @@
 > [!CAUTION]
 > At the moment, libnumerixpp is under active development (alpha), many things may not work, and this version is not recommended for use (all at your own risk).
 
-> [!CAUTION]
-> libnumerixpp in development (alpha), many things may not work, and this version is not recommended for use (all at your own risk).
-
 libnumerixpp is a powerful, cross-platofrm C++ library designed for high-performance numerical computing in the domains of physics, mathematics, and computer science.
 
 You can join to our [small russian telegram blog](https://t.me/hex_warehouse).
 
  > You can view docs for libnumerixpp [here](https://alexeev-prog.github.io/libnumerixpp).
+
+ > Current version: 0.1.2
 
 ## Key Features
  - **Extensive Functionality**: libnumerixpp provides a wide range of functions coverint the core areas of mathematics, physics, and computer science, including:
@@ -127,6 +126,7 @@ Check other our projects:
 ## Project Architecture
 
 ```
+.
 ├── build.sh
 ├── CHANGELOG.md
 ├── cmake
@@ -148,7 +148,6 @@ Check other our projects:
 ├── CMakePresets.json
 ├── CMakeUserPresets.json
 ├── conanfile.py
-├── cwpLvF9U
 ├── docs
 │   ├── doxygen-styles.css
 │   ├── en
