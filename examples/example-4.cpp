@@ -6,7 +6,7 @@
 #include "libnumerixpp/libnumerixpp.hpp"
 #include "libnumerixpp/mathematics/equations.hpp"
 
-void test_eq_sa(double (*f_eq)(double), double x0, const std::string& eq) {
+void test_eq_sa(double (*f_eq)(double), double x0, const std::string &eq) {
 	int const iterations = 100;
 
 	double z = NAN;

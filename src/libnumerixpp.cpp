@@ -9,4 +9,4 @@
 #include <iostream>
 #include <string>
 
-void println(const std::string& string) { std::cout << string << '\n'; }
+void println(const std::string &string) { std::cout << string << '\n'; }

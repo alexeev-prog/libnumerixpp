@@ -50,10 +50,10 @@ auto main() -> int {
 
 	double const best_pow_val = 100;
 	double const pow_results[5] = { mathematics::oldApproximatePower(10.0, 2.0),
-							  mathematics::anotherApproximatePower(10.0, 2.0),
-							  mathematics::binaryPower(10.0, 2),
-							  mathematics::fastPowerDividing(10.0, 2.0),
-							  mathematics::fastPowerFractional(10.0, 2.0) };
+									mathematics::anotherApproximatePower(10.0, 2.0),
+									mathematics::binaryPower(10.0, 2),
+									mathematics::fastPowerDividing(10.0, 2.0),
+									mathematics::fastPowerFractional(10.0, 2.0) };
 
 	std::cout << "0 oldApproximatePower	   : base 10 exponent 2: " << pow_results[0] << '\n';
 	std::cout << "1 anotherApproximatePower: base 10 exponent 2: " << pow_results[1] << '\n';

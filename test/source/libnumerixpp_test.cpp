@@ -1,6 +1,5 @@
 
 #include <catch2/catch_test_macros.hpp>
-#include <string>
 #include <vector>
 
 #include "libnumerixpp/computerscience/core.hpp"
@@ -42,13 +41,13 @@ TEST_CASE("Check mathematics-quadratic", "[mathematics-quadratic]") {
 }
 
 TEST_CASE("Check computerscience", "[computerscience]") {
-	int decimal_number = 777;
+	int const decimal_number = 777;
 	auto binary_number = computerscience::convert_decimal_to_binary(decimal_number);
-	int decimal_number2 = computerscience::convert_binary_to_decimal(binary_number);
+	int const decimal_number2 = computerscience::convert_binary_to_decimal(binary_number);
 	auto hexadecimal_number = computerscience::convert_decimal_to_hexadecimal(decimal_number);
-	int decimal_number3 = computerscience::convert_hexadecimal_to_decimal(hexadecimal_number);
+	int const decimal_number3 = computerscience::convert_hexadecimal_to_decimal(hexadecimal_number);
 	auto hexadecimal_number2 = computerscience::convert_binary_to_hexadecimal(binary_number);
-	long long bytes = 1024 * 1024;
+	long long const bytes = 1024 * 1024;
 
 	REQUIRE(binary_number == "001100001001");
 	REQUIRE(decimal_number2 == 777);
@@ -73,8 +72,8 @@ TEST_CASE("Check mathematics-equations", "[mathematics-equations]") {
 
 TEST_CASE("Check mathematics-statistics", "[mathematics-statistics]") {
 	const double numbers[3] = { 1.0, 1.0, 1.0 };
-	int list_length = sizeof(numbers) / sizeof(numbers[0]);
-	double average = mathematics::statistics::get_average(numbers, list_length);
+	int const list_length = sizeof(numbers) / sizeof(numbers[0]);
+	double const average = mathematics::statistics::get_average(numbers, list_length);
 
 	REQUIRE(average == 1.0);
 }

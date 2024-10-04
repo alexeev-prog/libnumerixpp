@@ -21,7 +21,8 @@ auto main() -> int {
 	double const final_velocity = physics::kinematics::calculate_final_velocity(10.0, 10.0, 10.0);
 	std::cout << "final velocity (10.0, 10.0, 10.0) = " << final_velocity << '\n';
 
-	double const final_position = physics::kinematics::calculate_final_position(10.0, 10.0, 10.0, 10.0);
+	double const final_position =
+		physics::kinematics::calculate_final_position(10.0, 10.0, 10.0, 10.0);
 	std::cout << "final position (10.0, 10.0, 10.0, 10.0) = " << final_velocity << '\n';
 
 	return 0;

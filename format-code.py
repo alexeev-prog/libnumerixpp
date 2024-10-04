@@ -93,9 +93,9 @@ def main():
 		for file in files: 
 			if file.endswith(cpp_extensions):
 				print(f"{BOLD}Format {file}: {root}/{file}{NC}")
-				os.system(f"{CLANG_FORMAT} -i -style=file {root}/{file}")
-				os.system(f'clang-tidy --fix {root}/{file}')
 				os.system(f'codespell -w {root}/{file}')
+				os.system(f'clang-tidy --fix {root}/{file}')
+				os.system(f"{CLANG_FORMAT} -i -style=file {root}/{file}")
 				print(f"{GREEN}Formatting completed successfully: {root}/{file}{NC}")
 				convert_file(f'{root}/{file}', "4", "tabs")
 
