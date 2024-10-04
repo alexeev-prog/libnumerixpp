@@ -1,3 +1,15 @@
+commit e0dc361414ba20087978848081e6228016f708a8
+Author: alexeev-dev <bro.alexeev@inbox.ru>
+Date:   Fri Oct 4 21:53:36 2024 +0700
+
+    docs: update docs
+
+commit 3a44d6838e6f0b6a1f0aa3d8cf07e79fd548c7a1
+Author: alexeev-dev <bro.alexeev@inbox.ru>
+Date:   Fri Oct 4 21:53:23 2024 +0700
+
+    build.sh
+
 commit 3e4247c67c65e74dfe6b14e3d74acf209ccf8cd2
 Author: alexeev-dev <bro.alexeev@inbox.ru>
 Date:   Fri Oct 4 21:50:44 2024 +0700
