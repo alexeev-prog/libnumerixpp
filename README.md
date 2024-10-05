@@ -32,7 +32,22 @@ You can join to our [small russian telegram blog](https://t.me/hex_warehouse).
 
  > You can view docs for libnumerixpp [here](https://alexeev-prog.github.io/libnumerixpp).
 
- > Current version: 0.1.2
+ > Current version: 0.1.3
+
+## Comparison to Alternatives 🤔
+To help you decide whether libnumerixpp is the right choice for your project, here's a comparison table with some popular numerical computation libraries:
+
+| Feature | libnumerixpp | Eigen | Boost.Numeric | LAPACK |
+| --- | --- | --- | --- | --- |
+| Multi-disciplinary Approach | ✅ | ❌ | ❌ | ❌ |
+| Equation Solving | ✅ | ❌ | ✅ | ❌ |
+| Statistical Functions | ❌ | ❌ | ✅ | ❌ |
+| Kinematics Calculations | ✅ | ❌ | ❌ | ❌ |
+| Number System Conversion | ✅ | ❌ | ❌ | ❌ |
+| Doxygen Documentation | ✅ | ✅ | ✅ | ❌ |
+| Unit Tests | ✅ | ✅ | ✅ | ✅ |
+| Cross-platform Support | ✅ | ✅ | ✅ | ✅ |
+As you can see, libnumerixpp offers a unique combination of features that sets it apart from other popular numerical computation libraries. Its multi-disciplinary approach, comprehensive functionality, and robust infrastructure make it a compelling choice for a wide range of projects.
 
 ## Key Features 🔑
 The libnumerixpp library boasts an impressive array of features that set it apart from its competitors:
@@ -58,21 +73,6 @@ Robust Infrastructure:
 - Catch2 unit tests ✅ for ensuring code quality and reliability
 - CMake build system 🛠️ for cross-platform compatibility and easy installation
 - clang-format code formatting 💅 for consistent and readable code
-
-## Comparison to Alternatives 🤔
-To help you decide whether libnumerixpp is the right choice for your project, here's a comparison table with some popular numerical computation libraries:
-
-| Feature | libnumerixpp | Eigen | Boost.Numeric | LAPACK |
-| --- | --- | --- | --- | --- |
-| Multi-disciplinary Approach | ✅ | ❌ | ❌ | ❌ |
-| Equation Solving | ✅ | ❌ | ✅ | ❌ |
-| Statistical Functions | ❌ | ❌ | ✅ | ❌ |
-| Kinematics Calculations | ✅ | ❌ | ❌ | ❌ |
-| Number System Conversion | ✅ | ❌ | ❌ | ❌ |
-| Doxygen Documentation | ✅ | ✅ | ✅ | ❌ |
-| Unit Tests | ✅ | ✅ | ✅ | ✅ |
-| Cross-platform Support | ✅ | ✅ | ✅ | ✅ |
-As you can see, libnumerixpp offers a unique combination of features that sets it apart from other popular numerical computation libraries. Its multi-disciplinary approach, comprehensive functionality, and robust infrastructure make it a compelling choice for a wide range of projects.
 
 ## Getting Started 🚀
 

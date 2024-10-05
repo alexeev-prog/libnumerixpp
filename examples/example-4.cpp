@@ -13,7 +13,7 @@ void test_eq_sa(double (*f_eq)(double), double x0, const std::string &eq) {
 
 	std::cout << "Equation solution " << eq << ":\t";
 
-	z = mathematics::equations::successiveApproximationsFindingRoot(f_eq, x0, iterations);
+	z = mathematics::equations::successive_approximations_finding_root(f_eq, x0, iterations);
 
 	std::cout << z << '\n';
 

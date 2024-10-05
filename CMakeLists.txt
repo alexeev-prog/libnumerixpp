@@ -4,9 +4,9 @@ include(cmake/prelude.cmake)
 
 project(
     libnumerixpp
-    VERSION 0.1.2
+    VERSION 0.1.3
     DESCRIPTION "A Powerful C++ Library for High-Performance Numerical Computing"
-    HOMEPAGE_URL "https://alxvdev.github.io/libnumerixpp"
+    HOMEPAGE_URL "https://alexeev-prog.github.io/libnumerixpp"
     LANGUAGES CXX
 )
 
