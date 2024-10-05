@@ -6,7 +6,3 @@
  * @authors alxvdev
  * @copyright Apache 2.0 License
  */
-#include <iostream>
-#include <string>
-
-void println(const std::string &string) { std::cout << string << '\n'; }

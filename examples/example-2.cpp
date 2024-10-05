@@ -26,8 +26,9 @@ auto main() -> int {
 	double const b = 5;
 	double const c = 5;
 
-	double const d = mathematics::quadratic::calculateDiscriminant(a, b, c);
-	std::vector<double> const roots = mathematics::quadratic::calculateRootsByDiscriminant(d, a, b);
+	double const d = mathematics::quadratic::calculate_discriminant(a, b, c);
+	std::vector<double> const roots =
+		mathematics::quadratic::calculate_roots_by_discriminant(d, a, b);
 
 	std::cout << "Quadratic Equation: a=" << a << "; b=" << b << "; c=" << c << '\n';
 	std::cout << "D=" << d << '\n';
@@ -49,11 +50,11 @@ auto main() -> int {
 	// POWER / Algorithms for fast exponentiation //
 
 	double const best_pow_val = 100;
-	double const pow_results[5] = { mathematics::oldApproximatePower(10.0, 2.0),
-									mathematics::anotherApproximatePower(10.0, 2.0),
-									mathematics::binaryPower(10.0, 2),
-									mathematics::fastPowerDividing(10.0, 2.0),
-									mathematics::fastPowerFractional(10.0, 2.0) };
+	double const pow_results[5] = { mathematics::old_approximate_power(10.0, 2.0),
+									mathematics::another_approximate_power(10.0, 2.0),
+									mathematics::binary_power(10.0, 2),
+									mathematics::fast_power_dividing(10.0, 2.0),
+									mathematics::fast_power_fractional(10.0, 2.0) };
 
 	std::cout << "0 oldApproximatePower	   : base 10 exponent 2: " << pow_results[0] << '\n';
 	std::cout << "1 anotherApproximatePower: base 10 exponent 2: " << pow_results[1] << '\n';

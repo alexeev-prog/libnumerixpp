@@ -133,8 +133,8 @@ auto main() -> int {
 	double const b = 5;
 	double const c = 5;
 
-	double const d = mathematics::quadratic::calculateDiscriminant(a, b, c);
-	std::vector<double> const roots = mathematics::quadratic::calculateRootsByDiscriminant(d, a, b);
+	double const d = mathematics::quadratic::calculate_discriminant(a, b, c);
+	std::vector<double> const roots = mathematics::quadratic::calculate_roots_by_discriminant(d, a, b);
 
 	std::cout << "Quadratic Equation: a=" << a << "; b=" << b << "; c=" << c << '\n';
 	std::cout << "D=" << d << '\n';
@@ -156,11 +156,11 @@ auto main() -> int {
 	// POWER / Algorithms for fast exponentiation //
 
 	double const best_pow_val = 100;
-	double const pow_results[5] = { mathematics::oldApproximatePower(10.0, 2.0),
-									mathematics::anotherApproximatePower(10.0, 2.0),
-									mathematics::binaryPower(10.0, 2),
-									mathematics::fastPowerDividing(10.0, 2.0),
-									mathematics::fastPowerFractional(10.0, 2.0) };
+	double const pow_results[5] = { mathematics::old_approximate_power(10.0, 2.0),
+									mathematics::another_approximate_power(10.0, 2.0),
+									mathematics::binary_power(10.0, 2),
+									mathematics::fast_power_dividing(10.0, 2.0),
+									mathematics::fast_power_fractional(10.0, 2.0) };
 
 	std::cout << "0 oldApproximatePower	   : base 10 exponent 2: " << pow_results[0] << '\n';
 	std::cout << "1 anotherApproximatePower: base 10 exponent 2: " << pow_results[1] << '\n';
@@ -201,7 +201,7 @@ void test_eq_sa(double (*f_eq)(double), double x0, const std::string &eq) {
 
 	std::cout << "Equation solution " << eq << ":\t";
 
-	z = mathematics::equations::successiveApproximationsFindingRoot(f_eq, x0, iterations);
+	z = mathematics::equations::successive_approximations_finding_root(f_eq, x0, iterations);
 
 	std::cout << z << '\n';
 
@@ -234,6 +234,7 @@ auto main() -> int {
 <summary>Physics</summary>
 
 ```cpp
+
 #include <iostream>
 
 #include "libnumerixpp/core/common.hpp"
@@ -283,14 +284,15 @@ auto main() -> int {
 	println("LIBNUMERIXPP");
 
 	int const decimal_number = 777;
-	std::string binary_number = computerscience::convertDecimalToBinary(decimal_number);
-	int const decimal_number2 = computerscience::convertBinaryToDecimal(binary_number);
-	std::string hexadecimal_number = computerscience::convertDecimalToHexadecimal(decimal_number);
-	int const decimal_number3 = computerscience::convertHexadecimalToDecimal(hexadecimal_number);
+	std::string binary_number = computerscience::convert_decimal_to_binary(decimal_number);
+	int const decimal_number2 = computerscience::convert_binary_to_decimal(binary_number);
+	std::string hexadecimal_number =
+		computerscience::convert_decimal_to_hexadecimal(decimal_number);
+	int const decimal_number3 = computerscience::convert_hexadecimal_to_decimal(hexadecimal_number);
 	std::string const hexadecimal_number2 =
-		computerscience::convertBinaryToHexadecimal(binary_number);
+		computerscience::convert_binary_to_hexadecimal(binary_number);
 	std::string const binary_number2 =
-		computerscience::convertHexadecimalToBinary(hexadecimal_number);
+		computerscience::convert_hexadecimal_to_binary(hexadecimal_number);
 	long long const bytes = 1024 * 1024;
 
 	std::cout << "Convert decimal " << decimal_number << " to binary: " << binary_number << '\n';
@@ -303,7 +305,7 @@ auto main() -> int {
 			  << '\n';
 	std::cout << "Convert hexadecimal " << hexadecimal_number << " to binary: " << binary_number2
 			  << '\n';
-	std::cout << "Convert " << bytes << ": " << computerscience::humanizeBytesSize(bytes) << '\n';
+	std::cout << "Convert " << bytes << ": " << computerscience::humanize_bytes_size(bytes) << '\n';
 
 	return 0;
 }
@@ -439,7 +441,6 @@ libnumerixpp is an Open Source project, and it only survives due to your feedbac
 Project releases are available at [this link](https://github.com/alexeev-prog/libnumerixpp/releases).
 
 ## Requirements 📋
-
 To use libnumerixpp, you will need the following:
 
 - A C++17 compatible compiler (e.g., GCC 8+, Clang 8+, or MSVC 2019+)
@@ -458,14 +459,12 @@ Check other our projects:
 We welcome contributions from the community! If you would like to contribute to the libnumerixpp project, please read our [contribution guidelines](CONTRIBUTING.md) and submit a pull request.
 
 ## Get Help 🆘
-
 If you encounter any issues or have questions about using libnumerixpp, you can:
 
 - 🐞 Open an issue on the [GitHub repository](https://github.com/alexeev-prog/libnumerixpp/issues)
 - 📧 Contact the project maintainers at dev.alexeev@main.ru
 
 ## Future Plans 🔮
-
 The libnumerixpp team is continuously working on expanding the library's capabilities and improving its overall performance and usability. Some of our future plans include:
 
 - 🧠 Implementing more advanced mathematical and physical computations, such as differential equations, linear algebra, and fluid dynamics
@@ -475,7 +474,6 @@ The libnumerixpp team is continuously working on expanding the library's capabil
 Stay tuned for more updates! 🚀
 
 ## Testing 🧪
-
 libnumerixpp uses the Catch2 testing framework to ensure the quality and reliability of the provided functionalities. The unit tests are located in the tests directory of the repository.
 
 To run the tests, you can execute the following command from the project's root directory:

@@ -10,14 +10,15 @@ auto main() -> int {
 	println("LIBNUMERIXPP");
 
 	int const decimal_number = 777;
-	std::string binary_number = computerscience::convertDecimalToBinary(decimal_number);
-	int const decimal_number2 = computerscience::convertBinaryToDecimal(binary_number);
-	std::string hexadecimal_number = computerscience::convertDecimalToHexadecimal(decimal_number);
-	int const decimal_number3 = computerscience::convertHexadecimalToDecimal(hexadecimal_number);
+	std::string binary_number = computerscience::convert_decimal_to_binary(decimal_number);
+	int const decimal_number2 = computerscience::convert_binary_to_decimal(binary_number);
+	std::string hexadecimal_number =
+		computerscience::convert_decimal_to_hexadecimal(decimal_number);
+	int const decimal_number3 = computerscience::convert_hexadecimal_to_decimal(hexadecimal_number);
 	std::string const hexadecimal_number2 =
-		computerscience::convertBinaryToHexadecimal(binary_number);
+		computerscience::convert_binary_to_hexadecimal(binary_number);
 	std::string const binary_number2 =
-		computerscience::convertHexadecimalToBinary(hexadecimal_number);
+		computerscience::convert_hexadecimal_to_binary(hexadecimal_number);
 	long long const bytes = 1024 * 1024;
 
 	std::cout << "Convert decimal " << decimal_number << " to binary: " << binary_number << '\n';
@@ -30,7 +31,7 @@ auto main() -> int {
 			  << '\n';
 	std::cout << "Convert hexadecimal " << hexadecimal_number << " to binary: " << binary_number2
 			  << '\n';
-	std::cout << "Convert " << bytes << ": " << computerscience::humanizeBytesSize(bytes) << '\n';
+	std::cout << "Convert " << bytes << ": " << computerscience::humanize_bytes_size(bytes) << '\n';
 
 	return 0;
 }
